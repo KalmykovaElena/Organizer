@@ -1,0 +1,9 @@
+.toDoItem{
+    display: flex;
+    justify-content: space-between;
+    border:1px solid #40bba8;
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 3px auto;
+    border-radius: 5px;
+}

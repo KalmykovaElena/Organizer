@@ -1,0 +1,16 @@
+
+.button{
+    height: 35px;
+    border:1px solid gray;
+    border-radius: 5px;
+}
+.button:hover{
+    background-color: teal;
+}
+.search{
+background-color: white;
+}
+.add{
+background-color: #484646;
+    color: white;
+}

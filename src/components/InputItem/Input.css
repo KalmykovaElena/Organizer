@@ -1,0 +1,8 @@
+.inputItem{
+    height: 30px;
+    border:1px solid gray;
+    border-radius: 5px;
+    background-color: rgba(29, 176, 138, 0.5);
+    color: white;
+    width: 315px;
+}
