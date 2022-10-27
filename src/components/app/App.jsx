@@ -4,6 +4,7 @@ import AppHeader from "../app-header";
 import SearchPanel from "../search-panel";
 import ItemAddForm from "../item-add-form";
 import ItemStatusFilter from "../item-status-filter/Item-status-filter";
+import './app.css'
 
 class App extends React.Component {
     constructor() {
@@ -12,7 +13,7 @@ class App extends React.Component {
             items: [
                 {id: 1, label: 'Learn React'},
                 {id: 2, label: 'Learn JS'},
-                {id: 3, label: 'Learn React'},
+                {id: 3, label: 'Learn Redux'},
             ]
         }
     }
@@ -34,11 +35,11 @@ class App extends React.Component {
 
 
         return (
-            <div>
+            <div className={'app'}>
                 <AppHeader/>
                 <SearchPanel/>
                 <ItemStatusFilter/>
-                <TodoList items={this.state.items} onRemove={(id) => this.onRemove(id)}/>
+                <TodoList  items={this.state.items} onRemove={(id) => this.onRemove(id)}/>
                 <ItemAddForm/>
             </div>
         );

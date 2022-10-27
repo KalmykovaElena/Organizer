@@ -1,17 +1,20 @@
 import React from 'react';
+import './todo-list-item.css'
 
 
-class TodoListItem extends React.Component{
+class TodoListItem extends React.Component {
 
-    render(){
+    render() {
 
-        return(<span>
+        return (<span className={'todoItem'}>
         <span>
-            Название таски
+            {this.props.label}
         </span>
-       <button onClick={this.props.onRemove}>Удалить</button>
-       <button>Отметить</button>
+                <span>
+       <button className={'removeButton'} onClick={this.props.onRemove}>   </button>
+       <button className={'canselButton'}></button>
              </span>
+            </span>
 
         )
     }

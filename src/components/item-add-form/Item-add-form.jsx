@@ -4,7 +4,7 @@ const ItemAddForm = () => {
     return (
         <form>
             <input type="text"/>
-            <button type={'submit'}>Добавить задание</button>
+            <button type={'submit'}>Add task</button>
         </form>
     );
 };

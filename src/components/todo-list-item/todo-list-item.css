@@ -1,0 +1,28 @@
+.todoItem{
+display: flex;
+    justify-content: space-between;
+    color:#000000;
+    font-size: 20px;
+}
+.removeButton{
+    width: 32px;
+    height: 32px;
+    background-color: rgba(28,28,28,0);
+    background-image: url("../../assets/delete .png");
+    border:none;
+}
+.removeButton:hover,.canselButton:hover {
+    background-color: rgba(28,28,28,0);
+    transform: scale(1.2);
+}
+.canselButton{
+    width: 32px;
+    height: 25px;
+    background-color: rgba(28,28,28,0);
+    background-image: url("../../assets/cancel.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border:none;
+    position: relative;
+    bottom: 3px;
+}

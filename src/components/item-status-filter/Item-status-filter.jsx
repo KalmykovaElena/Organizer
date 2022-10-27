@@ -11,9 +11,9 @@ const ItemStatusFilter = () => {
         return <button key={e.name}>{e.label}</button>
     })
     return (
-        <div>
+        <span className={'statusFilterButtons'}>
             {buttons}
-        </div>
+        </span>
     );
 };
 

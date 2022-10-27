@@ -1,0 +1,19 @@
+.todoListItem{
+    list-style: none;
+    border: 10px groove #f6f1eb;
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: #e8e0d5;
+    width: 30vw;
+
+}
+.todoListItem:last-child{
+    margin: 0;
+}
+.todoList{
+    background-color: #967d5e;
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}

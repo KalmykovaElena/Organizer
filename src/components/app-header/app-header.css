@@ -1,0 +1,10 @@
+.app-header{
+    text-align: center;
+    font-style: italic;
+}
+.app-header h1,h2{
+    margin-bottom: 10px;
+}
+.app-header h2{
+   margin-top: 0;
+}
