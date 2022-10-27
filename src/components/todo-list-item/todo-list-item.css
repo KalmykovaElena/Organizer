@@ -19,10 +19,16 @@ display: flex;
     width: 32px;
     height: 25px;
     background-color: rgba(28,28,28,0);
-    background-image: url("../../assets/cancel.png");
+    background-image: url("../../assets/png.png");
     background-size: contain;
     background-repeat: no-repeat;
     border:none;
     position: relative;
     bottom: 3px;
+}
+.done{
+    text-decoration: line-through;
+}
+.important{
+    color:red ;
 }

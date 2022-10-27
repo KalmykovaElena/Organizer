@@ -7,6 +7,7 @@ import ItemStatusFilter from "../item-status-filter/Item-status-filter";
 import './app.css'
 
 class App extends React.Component {
+    id=4
     constructor() {
         super();
         this.state = {
@@ -14,10 +15,15 @@ class App extends React.Component {
                 {id: 1, label: 'Learn React'},
                 {id: 2, label: 'Learn JS'},
                 {id: 3, label: 'Learn Redux'},
-            ]
+            ],
+            searchText:''
         }
     }
-
+setSearchText=(text)=>{
+        this.setState({
+            searchText:text
+        })
+}
     onRemove(id) {
         this.setState((state) => {
             const index = state.items.findIndex((item) => item.id === id)
@@ -30,17 +36,32 @@ class App extends React.Component {
             }
         })
     }
-
+    onItemAdd=(label)=>{
+        this.setState((state)=>{
+            const item={id:++this.id,label}
+            return{
+                items:[...state.items,item]
+            }
+        })
+    }
+onSearchChange=(search)=>{
+if(search.length===0){
+    return this.state.items
+}
+    return this.state.items.filter(item=>{
+        return item.label.toLowerCase().indexOf(search.toLowerCase())>-1
+    })
+}
     render() {
-
+const visibleItems=this.onSearchChange(this.state.searchText)
 
         return (
             <div className={'app'}>
                 <AppHeader/>
-                <SearchPanel/>
+                <SearchPanel setSearchText={this.setSearchText}/>
                 <ItemStatusFilter/>
-                <TodoList  items={this.state.items} onRemove={(id) => this.onRemove(id)}/>
-                <ItemAddForm/>
+                <TodoList  items={visibleItems} onRemove={(id) => this.onRemove(id)}/>
+                <ItemAddForm onItemAdd={this.onItemAdd}/>
             </div>
         );
     }
