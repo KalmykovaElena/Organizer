@@ -7,7 +7,8 @@ import ItemStatusFilter from "../item-status-filter/Item-status-filter";
 import './app.css'
 
 class App extends React.Component {
-    id=4
+    id = 4
+
     constructor() {
         super();
         this.state = {
@@ -16,14 +17,16 @@ class App extends React.Component {
                 {id: 2, label: 'Learn JS'},
                 {id: 3, label: 'Learn Redux'},
             ],
-            searchText:''
+            searchText: ''
         }
     }
-setSearchText=(text)=>{
+
+    setSearchText = (text) => {
         this.setState({
-            searchText:text
+            searchText: text
         })
-}
+    }
+
     onRemove(id) {
         this.setState((state) => {
             const index = state.items.findIndex((item) => item.id === id)
@@ -36,31 +39,56 @@ setSearchText=(text)=>{
             }
         })
     }
-    onItemAdd=(label)=>{
-        this.setState((state)=>{
-            const item={id:++this.id,label}
-            return{
-                items:[...state.items,item]
+
+    onItemAdd = (label) => {
+       if(label) this.setState((state) => {
+            const item = {id: ++this.id, label}
+            return {
+                items: [...state.items, item]
             }
         })
     }
-onSearchChange=(search)=>{
-if(search.length===0){
-    return this.state.items
-}
-    return this.state.items.filter(item=>{
-        return item.label.toLowerCase().indexOf(search.toLowerCase())>-1
-    })
-}
+    onSearchChange = (search) => {
+        if (search.length === 0) {
+            return this.state.items
+        }
+        return this.state.items.filter(item => {
+            return item.label.toLowerCase().indexOf(search.toLowerCase()) > -1
+        })
+    }
+    toggleDone = (item) => {
+        const newItems = this.state.items.map((e, i) => {
+            if (i === item) e.done = !e.done
+            return e
+        })
+        this.setState({
+            items: newItems
+        })
+    }
+    toggleImportant = (item) => {
+        const newItems = this.state.items.map((e, i) => {
+            if (i === item) {
+                e.important = !e.important
+            }
+            return e
+        })
+        this.setState({
+            items: newItems
+        })
+    }
+
     render() {
-const visibleItems=this.onSearchChange(this.state.searchText)
+        const visibleItems = this.onSearchChange(this.state.searchText)
 
         return (
             <div className={'app'}>
                 <AppHeader/>
                 <SearchPanel setSearchText={this.setSearchText}/>
                 <ItemStatusFilter/>
-                <TodoList  items={visibleItems} onRemove={(id) => this.onRemove(id)}/>
+                <TodoList items={visibleItems} onRemove={(id) => this.onRemove(id)}
+                    changeImportant={(index)=>this.toggleImportant(index)}
+                    changeDone={(index)=>this.toggleDone(index)}
+                />
                 <ItemAddForm onItemAdd={this.onItemAdd}/>
             </div>
         );

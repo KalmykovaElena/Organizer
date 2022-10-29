@@ -3,26 +3,11 @@ import './todo-list-item.css'
 
 
 class TodoListItem extends React.Component {
-state={
-    done:false,
-    important:false
-}
-onToggleDone=()=>{
-    this.setState((state)=>{
-        return{
-            done:!state.done
-        }
-    })
-}
-    onToggleImportant=()=>{
-        this.setState((state)=>{
-            return{
-                important:!state.important
-            }
-        })
-    }
+
     render() {
-const {done,important}=this.state
+        const important=this.props.important
+        const done=this.props.done
+
         let style = 'todoItem'
         if(important){
             style+=' important'
@@ -31,13 +16,12 @@ const {done,important}=this.state
            style+=' done'
        }
         return (<span className={style}>
-        <span className={style} onClick={this.onToggleDone} >
-
+        <span className={style} onClick={this.props.setDone} >
             {this.props.label}
         </span>
                 <span>
        <button className={'removeButton'} onClick={this.props.onRemove}>   </button>
-       <button className={'canselButton'} onClick={this.onToggleImportant}></button>
+       <button className={'canselButton'} onClick={this.props.setImportant}></button>
              </span>
             </span>
 

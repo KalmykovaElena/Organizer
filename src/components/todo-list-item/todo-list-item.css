@@ -30,5 +30,7 @@ display: flex;
     text-decoration: line-through;
 }
 .important{
-    color:red ;
+    color:#bc1111;
+    font-weight: bold;
+    font-style: italic;
 }
