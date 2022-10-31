@@ -9,18 +9,24 @@ import './app.css'
 class App extends React.Component {
     id = 4
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             items: [
-                {id: 1, label: 'Learn React'},
-                {id: 2, label: 'Learn JS'},
-                {id: 3, label: 'Learn Redux'},
+                {id: 1, label: 'Learn React',done:false, important:false},
+                {id: 2, label: 'Learn JS',done:false, important:false},
+                {id: 3, label: 'Learn Redux',done:false, important:false},
             ],
-            searchText: ''
+            searchText: '',
+            filter:'all'
         }
     }
 
+    onFilterChange = (filterName)=>{
+this.setState({
+    filter:filterName
+})
+    }
     setSearchText = (text) => {
         this.setState({
             searchText: text
@@ -42,32 +48,32 @@ class App extends React.Component {
 
     onItemAdd = (label) => {
        if(label) this.setState((state) => {
-            const item = {id: ++this.id, label}
+            const item = {id: ++this.id, label,done:false, important:false}
             return {
                 items: [...state.items, item]
             }
         })
     }
-    onSearchChange = (search) => {
+    onSearchChange = (items,search) => {
         if (search.length === 0) {
-            return this.state.items
+            return items
         }
         return this.state.items.filter(item => {
             return item.label.toLowerCase().indexOf(search.toLowerCase()) > -1
         })
     }
-    toggleDone = (item) => {
-        const newItems = this.state.items.map((e, i) => {
-            if (i === item) e.done = !e.done
+    toggleDone = (id) => {
+        const newItems = this.state.items.map((e) => {
+            if (e.id === id) e.done = !e.done
             return e
         })
         this.setState({
             items: newItems
         })
     }
-    toggleImportant = (item) => {
+    toggleImportant = (id) => {
         const newItems = this.state.items.map((e, i) => {
-            if (i === item) {
+            if (e.id === id) {
                 e.important = !e.important
             }
             return e
@@ -76,18 +82,32 @@ class App extends React.Component {
             items: newItems
         })
     }
+filterItems=(items,filter)=>{
+if (filter==='all'){
+    return items
+}else if(filter ==='active'){
+    return items.filter(item=>!(item.done))
+}else if (filter === 'done'){
+    return items.filter(item=>item.done)
+}else if (filter === 'important'){
+    return items.filter(item=>item.important)
+}
 
+}
     render() {
-        const visibleItems = this.onSearchChange(this.state.searchText)
+        const {items,searchText,filter} = this.state
+        const doneCounter = items.filter(item=>item.done).length
+        const toDoCounter = items.length -doneCounter
+        const visibleItems = this.onSearchChange(this.filterItems (items,filter),searchText)
 
         return (
             <div className={'app'}>
-                <AppHeader/>
+                <AppHeader toDoCounter={toDoCounter} doneCounter={doneCounter}/>
                 <SearchPanel setSearchText={this.setSearchText}/>
-                <ItemStatusFilter/>
+                <ItemStatusFilter onFilter={this.onFilterChange}/>
                 <TodoList items={visibleItems} onRemove={(id) => this.onRemove(id)}
-                    changeImportant={(index)=>this.toggleImportant(index)}
-                    changeDone={(index)=>this.toggleDone(index)}
+                    changeImportant={this.toggleImportant}
+                    changeDone={this.toggleDone}
                 />
                 <ItemAddForm onItemAdd={this.onItemAdd}/>
             </div>
@@ -95,26 +115,5 @@ class App extends React.Component {
     }
 }
 
-// const App = () => {
-//     // создаем временный store
-//     let items=[
-//         {id:1,label:'Learn React'},
-//         {id:2,label:'Learn JS'},
-//         {id:3,label:'Learn React'}
-//     ]
-//     const onRemove=(id)=>{
-// const newArray=items.filter(item=>item.id!==id)
-//         items=newArray
-//     }
-//     return (
-//         <div>
-//             <AppHeader/>
-//             <SearchPanel/>
-//             <ItemStatusFilter/>
-//             <TodoList items={items} onRemove={onRemove()}/>
-//             <ItemAddForm/>
-//         </div>
-//     );
-// };
 
 export default App;
