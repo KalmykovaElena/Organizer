@@ -1,3 +1,4 @@
+
 .todoListItem{
     list-style: none;
     border: 10px groove #f6f1eb;
@@ -5,7 +6,7 @@
     margin-bottom: 10px;
     background-color: #e8e0d5;
     width: 30vw;
-
+transition:all .3s;
 }
 .todoListItem:last-child{
     margin: 0;
@@ -18,4 +19,31 @@ display: flex;
     padding: 15px;
     max-height: 70vh;
     overflow-y: auto;
+}
+.emptyList{
+    background-image: url("../../assets/e94bbfc3.png");
+    width: 200px;
+    height: 200px;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.emptyList span{
+    margin-top: -20px;
+    transform: skew(8deg, -7deg);
+    font-family: 'Fasthand', cursive;
+    font-size: 25px;
+}
+@media screen and (max-width:900px){
+    .todoListItem {
+        width: 60vw;
+    }
+}
+@media screen and (max-width:700px){
+    .todoListItem {
+        height: 20px;
+        width: 70vw;
+    }
 }

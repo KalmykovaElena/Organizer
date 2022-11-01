@@ -13,19 +13,21 @@ class App extends React.Component {
         super(props);
         this.state = {
             items: [
-                {id: 1, label: 'Learn React',done:false, important:false},
-                {id: 2, label: 'Learn JS',done:false, important:false},
-                {id: 3, label: 'Learn Redux',done:false, important:false},
+                {id: 1, label: 'Learn React', done: false, important: false},
+                {id: 2, label: 'Learn JS', done: false, important: false},
+                {id: 3, label: 'Learn Redux', done: false, important: false},
             ],
             searchText: '',
-            filter:'all'
+            filter: 'all',
+            activeButton: 'all'
         }
     }
 
-    onFilterChange = (filterName)=>{
-this.setState({
-    filter:filterName
-})
+    onFilterChange = (filterName) => {
+        this.setState({
+            filter: filterName,
+            activeButton: filterName
+        })
     }
     setSearchText = (text) => {
         this.setState({
@@ -47,14 +49,14 @@ this.setState({
     }
 
     onItemAdd = (label) => {
-       if(label) this.setState((state) => {
-            const item = {id: ++this.id, label,done:false, important:false}
+        if (label) this.setState((state) => {
+            const item = {id: ++this.id, label, done: false, important: false}
             return {
                 items: [...state.items, item]
             }
         })
     }
-    onSearchChange = (items,search) => {
+    onSearchChange = (items, search) => {
         if (search.length === 0) {
             return items
         }
@@ -82,32 +84,35 @@ this.setState({
             items: newItems
         })
     }
-filterItems=(items,filter)=>{
-if (filter==='all'){
-    return items
-}else if(filter ==='active'){
-    return items.filter(item=>!(item.done))
-}else if (filter === 'done'){
-    return items.filter(item=>item.done)
-}else if (filter === 'important'){
-    return items.filter(item=>item.important)
-}
+    filterItems = (items, filter) => {
+        switch (filter) {
+            case'all':
+                return items
+            case'active':
+                return items.filter(item => !(item.done))
+            case 'done':
+                return items.filter(item => item.done)
+            case 'important':
+                return items.filter(item => item.important)
+            default:
+                return items
+        }
+    }
 
-}
     render() {
-        const {items,searchText,filter} = this.state
-        const doneCounter = items.filter(item=>item.done).length
-        const toDoCounter = items.length -doneCounter
-        const visibleItems = this.onSearchChange(this.filterItems (items,filter),searchText)
+        const {items, searchText, filter} = this.state
+        const doneCounter = items.filter(item => item.done).length
+        const toDoCounter = items.length - doneCounter
+        const visibleItems = this.onSearchChange(this.filterItems(items, filter), searchText)
 
         return (
             <div className={'app'}>
                 <AppHeader toDoCounter={toDoCounter} doneCounter={doneCounter}/>
                 <SearchPanel setSearchText={this.setSearchText}/>
-                <ItemStatusFilter onFilter={this.onFilterChange}/>
+                <ItemStatusFilter onFilter={this.onFilterChange} isActive={this.state.activeButton}/>
                 <TodoList items={visibleItems} onRemove={(id) => this.onRemove(id)}
-                    changeImportant={this.toggleImportant}
-                    changeDone={this.toggleDone}
+                          changeImportant={this.toggleImportant}
+                          changeDone={this.toggleDone}
                 />
                 <ItemAddForm onItemAdd={this.onItemAdd}/>
             </div>

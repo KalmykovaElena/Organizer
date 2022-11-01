@@ -23,7 +23,7 @@ const TodoListItem =(
         <span className={style} onClick={setDone} >
             {label}
         </span>
-                <span>
+                <span className={'buttonsWrapper'}>
        <button className={'removeButton'} onClick={onRemove}>   </button>
        <button className={'canselButton'} onClick={setImportant}></button>
              </span>

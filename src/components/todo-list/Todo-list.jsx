@@ -3,7 +3,6 @@ import TodoListItem from "../todo-list-item";
 import './todo-list.css'
 
 const TodoList=({items,onRemove,changeImportant,changeDone})=>{
- {
         const elements = items.map((item) => {
             const {id,...itemProps}=item
             return (<li className={'todoListItem'} key={id}>
@@ -17,15 +16,13 @@ const TodoList=({items,onRemove,changeImportant,changeDone})=>{
         })
 
             if(elements.length===0){
-                return <div className={'emptyList'}>task-list is empty</div>
+                return <div className={'emptyList'}><span>task-list <br/>is empty</span></div>
             }else {
                 return ( <ul className={'todoList'}>
                     {elements}
                 </ul>
                 );
             }
-
-    }
 };
 
 export default TodoList;

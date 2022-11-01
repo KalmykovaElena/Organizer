@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './item-status-filter.css'
 const filterButtons = [
     {name: 'all', label: 'All'},
     {name: 'active', label: 'Active'},
@@ -7,9 +7,9 @@ const filterButtons = [
     {name: 'important', label: 'Important'}
 ]
 
-const ItemStatusFilter = ({onFilter}) => {
+const ItemStatusFilter = ({onFilter,isActive}) => {
     const buttons = filterButtons.map((e) => {
-        return <button key={e.name}
+        return <button key={e.name} className={isActive===e.name?'active':null}
         onClick={()=>onFilter(e.name)}
         >{e.label}</button>
     })

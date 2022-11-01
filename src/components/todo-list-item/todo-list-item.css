@@ -34,3 +34,21 @@ display: flex;
     font-weight: bold;
     font-style: italic;
 }
+@media screen and (max-width:700px) {
+    .todoItem{
+        font-size: 15px;
+    }
+    .removeButton {
+        background-size: cover;
+        height: 28px;
+    }
+    .canselButton {
+        background-size: contain;
+        height: 20px;
+        width: 20px;
+        bottom: 0;
+    }
+    .buttonsWrapper{
+        margin-top: -10px;
+    }
+}
