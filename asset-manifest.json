@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/todo-step/static/css/main.b4815635.css",
+    "main.js": "/todo-step/static/js/main.7c40435f.js",
+    "static/media/letters-pens-pen-75704.jpg": "/todo-step/static/media/letters-pens-pen-75704.5e7eb958916fe6b576e7.jpg",
+    "static/media/e94bbfc3.png": "/todo-step/static/media/e94bbfc3.f449fd2940225680047c.png",
+    "index.html": "/todo-step/index.html",
+    "main.b4815635.css.map": "/todo-step/static/css/main.b4815635.css.map",
+    "main.7c40435f.js.map": "/todo-step/static/js/main.7c40435f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4815635.css",
+    "static/js/main.7c40435f.js"
+  ]
+}
