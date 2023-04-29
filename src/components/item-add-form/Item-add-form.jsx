@@ -1,35 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class ItemAddForm extends React.Component{
-    state={
-        label:''
-    }
-    onLabelChange=(e)=>{
-        this.setState({
-            label:e.target.value
-        })
-    }
-    onSubmit=(e)=>{
+const ItemAddForm =({onItemAdd})=>{
+   const [label, setLabel]= useState('')
+    
+   const onLabelChange=(e)=> setLabel(e.target.value)
+           
+     const onSubmit=(e)=>{
         e.preventDefault()
-        const {label}=this.state
-        this.props.onItemAdd(label)
-        this.setState({
-            label:''
-        })
+        onItemAdd(label)
+        setLabel('')
     }
-    render() {
         return (
             <form
-            onSubmit={this.onSubmit}>
+            onSubmit={onSubmit}>
                 <input
                     type="text"
-                    value={this.state.label}
-                    onChange={this.onLabelChange}
+                    value={label}
+                    onChange={onLabelChange}
                 />
                 <button>Add task</button>
             </form>
         );
-    }
 };
 
 export default ItemAddForm;
