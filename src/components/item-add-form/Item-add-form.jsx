@@ -10,8 +10,10 @@ const ItemAddForm =()=>{
            
      const onSubmit=(e)=>{
         e.preventDefault()
-        const item = {id: Date.now(), label, done: false, important: false}
-        dispatch(setItems( [...items,item]))
+        if (label){
+            const item = {id: Date.now(), label, done: false, important: false}
+            dispatch(setItems( [...items,item]))
+        }
         setLabel('')
     }
         return (

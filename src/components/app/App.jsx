@@ -1,21 +1,20 @@
 import React from 'react';
-import TodoList from '../todo-list';
-import AppHeader from '../app-header';
-import SearchPanel from '../search-panel';
-import ItemAddForm from '../item-add-form';
-import ItemStatusFilter from '../item-status-filter/Item-status-filter';
-import './app.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './app.css'
+import NotFound from '../pages/notFound/NotFound';
+import Main from '../pages/main/Main';
 
-const App = () => {
+
+export default function App() {
   return (
-    <div className={'app'}>
-      <AppHeader />
-      <SearchPanel />
-      <ItemStatusFilter />
-      <TodoList />
-      <ItemAddForm />
+    <div className="app">
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/todo-step' element={<Main />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
     </div>
   );
-};
-
-export default App;
+}

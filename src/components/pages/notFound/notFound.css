@@ -1,0 +1,29 @@
+
+.not-found-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.image{
+    width: 500px;
+}
+
+.not-found-page__button>a{
+    color: #643318;
+    text-decoration: none;
+    font-size: 3vw;
+    letter-spacing: 1rem;
+    font-weight: bold;
+    list-style: none;
+    border: 10px groove #f6f1eb;
+    height: 30px;
+    padding-bottom: 5%;
+    background-color: #e8e0d5;
+    width: 20vw;
+    transition:all .3s;
+    text-align: center;
+    display: inline-block;
+    margin-top: 3rem;
+}

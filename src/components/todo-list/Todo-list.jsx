@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoListItem from '../todo-list-item';
+
 import './todo-list.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -7,6 +7,7 @@ import {
   toggleDone,
   toggleImportant,
 } from '../../redux/redusers/todoReduser';
+import TodoListItem from '../todo-list-item/Todo-list-item';
 
 const TodoList = () => {
   const dispatch = useDispatch();
