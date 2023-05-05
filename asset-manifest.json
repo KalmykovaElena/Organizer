@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/todo-step/static/css/main.2e7e125f.css",
-    "main.js": "/todo-step/static/js/main.0c9f909c.js",
-    "static/media/letters-pens-pen-75704.jpg": "/todo-step/static/media/letters-pens-pen-75704.5e7eb958916fe6b576e7.jpg",
-    "static/media/e94bbfc3.png": "/todo-step/static/media/e94bbfc3.f449fd2940225680047c.png",
-    "static/media/404.png": "/todo-step/static/media/404.fab8ad695e2026cc86b8.png",
-    "index.html": "/todo-step/index.html",
-    "main.2e7e125f.css.map": "/todo-step/static/css/main.2e7e125f.css.map",
-    "main.0c9f909c.js.map": "/todo-step/static/js/main.0c9f909c.js.map"
+    "main.css": "/Organizer/static/css/main.381aa94c.css",
+    "main.js": "/Organizer/static/js/main.a0f6289f.js",
+    "static/media/letters-pens-pen-75704.jpg": "/Organizer/static/media/letters-pens-pen-75704.5e7eb958916fe6b576e7.jpg",
+    "static/media/e94bbfc3.png": "/Organizer/static/media/e94bbfc3.f449fd2940225680047c.png",
+    "static/media/404.png": "/Organizer/static/media/404.fab8ad695e2026cc86b8.png",
+    "index.html": "/Organizer/index.html",
+    "main.381aa94c.css.map": "/Organizer/static/css/main.381aa94c.css.map",
+    "main.a0f6289f.js.map": "/Organizer/static/js/main.a0f6289f.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e7e125f.css",
-    "static/js/main.0c9f909c.js"
+    "static/css/main.381aa94c.css",
+    "static/js/main.a0f6289f.js"
   ]
 }
