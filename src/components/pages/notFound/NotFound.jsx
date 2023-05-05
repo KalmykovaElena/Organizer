@@ -8,7 +8,7 @@ const NotFound = () => {
     <main className={'not-found-page'}>
      <img src={img} className='image' alt="" />
 <div className="not-found-page__button">
-      <NavLink to="/Organizer">
+      <NavLink to="/Organizer/">
         Main
       </NavLink>
 </div>

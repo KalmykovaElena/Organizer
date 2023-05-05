@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4ede3a1-4a3f-41ea-8158-8a15e56b1e44" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/todo-step.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app-header/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/item-add-form/Item-add-form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item-add-form/Item-add-form.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/item-add-form/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/item-status-filter/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search-panel/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/todo-list-item/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/todo-list/Todo-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/todo-list/Todo-list.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/todo-list/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="a4ede3a1-4a3f-41ea-8158-8a15e56b1e44" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
