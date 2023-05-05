@@ -11,7 +11,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/todo-step' element={<Main />} />
+        <Route path='/Organizer' element={<Main />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
